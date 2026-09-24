@@ -14,7 +14,7 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Sans+Sinhala:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Sans+Sinhala:wght@400;600;700&family=Abhaya+Libre:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -52,7 +52,7 @@
 
       --font-main: 'Montserrat', sans-serif;
 
-      --font-si:   'Noto Sans Sinhala', sans-serif;
+      --font-si:   'Abhaya Libre', 'Noto Sans Sinhala', sans-serif;
 
     }
 
@@ -612,31 +612,11 @@
 
     .founder-highlight-tag i { font-size: .7rem; }
 
-    .founder-sinhala-block {
+    
 
-      background: linear-gradient(135deg, rgba(255,107,0,.06), rgba(245,166,35,.04));
+    
 
-      border: 1px solid rgba(245,166,35,.15); border-radius: 16px; padding: 24px 28px;
-
-      margin-top: 24px;
-
-    }
-
-    .founder-sinhala-block p {
-
-      font-family: var(--font-si); font-size: .88rem;
-
-      color: var(--text-muted); line-height: 1.9;
-
-    }
-
-    .founder-sinhala-label {
-
-      font-size: .68rem; letter-spacing: 2px; text-transform: uppercase;
-
-      color: var(--gold); margin-bottom: 10px; display: block;
-
-    }
+    
 
 
 
@@ -925,6 +905,16 @@
     }
 
     @media (max-width:768px) {
+      #hero { padding: 120px 5% 80px !important; }
+      .hero-title { font-size: 2.8rem !important; }
+      .section-title { font-size: 2.2rem !important; }
+      .nav-links { display:none;flex-direction:column;position:absolute;top:80px;left:0;right:0;background:rgba(8,8,8,.98);padding:30px 6%;gap:24px;border-bottom:1px solid rgba(255,255,255,.05); }
+      .portfolio-marquee-wrapper { margin-left: 0 !important; transform: none !important; left: 0 !important; width: 100% !important; padding: 10px 0 !important; }
+      .portfolio-marquee-wrapper::before, .portfolio-marquee-wrapper::after { display: none; }
+      .pm-card { width: 200px !important; height: 200px !important; }
+      .about-images { height: 350px !important; }
+      .founder-image-frame img { height: 350px !important; }
+      .contact-card { padding: 30px 20px !important; }
 
       .nav-links { display:none;flex-direction:column;position:absolute;top:80px;left:0;right:0;background:rgba(8,8,8,.98);padding:30px 6%;gap:24px; }
 
@@ -949,6 +939,12 @@
     }
 
     @media (max-width:480px) {
+      .hero-title { font-size: 2.2rem !important; }
+      .section-title { font-size: 1.8rem !important; }
+      .about-stat-num { font-size: 1.5rem !important; }
+      .about-images { height: 250px !important; }
+      .founder-image-frame img { height: 280px !important; }
+      .pm-card { width: 160px !important; height: 160px !important; }
 
       .stats-grid { grid-template-columns:repeat(2,1fr);gap:30px; }
 
@@ -961,6 +957,7 @@
 </head>
 
 <body>
+<div id="site-wrapper" style="overflow: hidden; width: 100%; position: relative;">
 
 
 
@@ -1252,7 +1249,7 @@
 
       <p class="section-desc">
 
-        ClickWave Media යනු ශ්රී ලංකාවේ ප්රමුඛ ඩිජිටල් නිර්මාණ ආයතනයකි. ඔබේ brand එකේ story ලෝකයට කියන්නට අපි සෑම විටම සූදානම්.
+        ClickWave Media යනු ශ්‍රී ලංකාවේ ප්‍රමුඛ ඩිජිටල් නිර්මාණ ආයතනයකි. ඔබේ brand එකේ story ලෝකයට කියන්නට අපි සෑම විටම සූදානම්.
 
       </p>
 
@@ -1266,7 +1263,7 @@
 
         <div class="about-stat">
 
-          <div class="about-stat-num counter" data-target="250">0</div>
+          <div class="about-stat-num"><span class="counter" data-target="1000">0</span>+</div>
 
           <div class="about-stat-label">Projects</div>
 
@@ -1274,9 +1271,9 @@
 
         <div class="about-stat">
 
-          <div class="about-stat-num counter" data-target="120">0</div>
+          <div class="about-stat-num"><span class="counter" data-target="150">0</span>+</div>
 
-          <div class="about-stat-label">Clients</div>
+          <div class="about-stat-label">Industries</div>
 
         </div>
 
@@ -1348,15 +1345,11 @@
 
         <p>
 
-          Kavinga Sadaruwan is a seasoned <strong style="color:var(--gold)">Business Development Specialist</strong> and the driving force behind ClickWave Media. With over <strong style="color:var(--gold)">7 years of hands-on experience</strong> in corporate strategy, business expansion, and market innovation, Kavinga has a proven track record of guiding enterprises from foundational setups to scalable success.
+          ClickWave Media හි නිර්මාතෘ කාවිංග සඳරුවන් යනු ව්‍යාපාර සංවර්ධන ක්ෂේත්‍රයේ වසර 7කට අධික පළපුරුද්දක් සහිත ප්‍රවීණයෙකි. නවීන ඩිජිටල් කළමනාකරණය, ෆේස්බුක් සහ ගූගල් ප්‍රවර්ධන උපායමාර්ග මෙන්ම සාර්ථක ඉසව් සැලසුම්කරණය හරහා ඕනෑම ව්‍යාපාරයක් මීළඟ මට්ටමට ඔසවා තැබීම ඔහුගේ අරමුණයි.
 
         </p>
 
-        <p>
-
-          His deep understanding of real-world business challenges comes from practical leadership — having actively served in <strong style="color:var(--gold)">directorship roles</strong> and managed comprehensive corporate operations, including his strategic involvement with <em>Ceylon Coco Rich (Private) Limited</em>. Through ClickWave Media, he bridges the gap between traditional business development and digital momentum — leveraging expert social media management, Google location optimization, and impactful event planning to help brands <strong style="color:var(--gold)">dominate their markets</strong> and achieve continuous growth.
-
-        </p>
+        
 
       </div>
 
@@ -1380,17 +1373,7 @@
 
 
 
-      <div class="founder-sinhala-block">
-
-        <span class="founder-sinhala-label">සිංහල</span>
-
-        <p>
-
-          ClickWave Media හි නිර්මාතෘ <strong>කාවිංග සඳරුවන්</strong> යනු ව්යාපාර සංවර්ධනය ක්ෂේත්රයේ වසර 7කට අධික පලපුරුද්දක් සහිත ප්රවීණයෙකි. නවීන ඩිජිටල් කළමනාකරණය, ෆේස්බුක් සහ ගූගල් ප්රවර්ධන උපායමාර්ග මෙන්ම සාර්ථක ඉසව් සැලසුම්කරණය හරහා ඕනෑම ව්යාපාරයක් මීළඟ මට්ටමට ඔසවා තැබීම ඔහුගේ අරමුණයි.
-
-        </p>
-
-      </div>
+      
 
     </div>
 
@@ -1518,7 +1501,7 @@
 
     <div class="stat-item reveal">
 
-      <span class="stat-number"><span class="counter" data-target="250">0</span><span class="stat-suffix">+</span></span>
+      <span class="stat-number"><span class="counter" data-target="1000">0</span><span class="stat-suffix">+</span></span>
 
       <span class="stat-label">Projects Delivered</span>
 
@@ -1526,9 +1509,9 @@
 
     <div class="stat-item reveal" style="transition-delay:.15s">
 
-      <span class="stat-number"><span class="counter" data-target="120">0</span><span class="stat-suffix">+</span></span>
+      <span class="stat-number"><span class="counter" data-target="150">0</span><span class="stat-suffix">+</span></span>
 
-      <span class="stat-label">Happy Clients</span>
+      <span class="stat-label">Industries Served</span>
 
     </div>
 
@@ -1596,7 +1579,7 @@
 
       </h2>
 
-      <div class="ph-title-shimmer"></div>
+      
 
     </div>
 
@@ -1698,7 +1681,7 @@
 
     /* ── Portfolio Header Animations ── */
 
-    .portfolio-header { position: relative; text-align: center; margin-bottom: 50px; padding: 20px 0 0; overflow: visible; }
+    .portfolio-header { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 50px; padding: 20px 0 0; overflow: visible; }
 
 
 
@@ -1815,20 +1798,6 @@
     }
 
     /* Shimmer sweep overlay */
-
-    .ph-title-shimmer {
-
-      position: absolute; inset: 0;
-
-      background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.08) 50%, transparent 60%);
-
-      background-size: 200% 100%;
-
-      animation: shimmerSweep 3s ease-in-out infinite;
-
-      pointer-events: none;
-
-    }
 
     @keyframes shimmerSweep {
 
@@ -2764,6 +2733,7 @@
 
 
 
+</div>
 </body>
 
 </html>
