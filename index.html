@@ -226,8 +226,22 @@
 
     }
 
-    #particles-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    #particles-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
 
+    .hero-bg-anim {
+      position: absolute; inset: -10%; 
+      background: url('images/hero-bg.jpg') center/cover no-repeat;
+      z-index: 0;
+      animation: heroPan 40s alternate ease-in-out infinite;
+    }
+    .hero-bg-overlay {
+      position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(to bottom, rgba(12,12,12,0.85) 0%, rgba(12,12,12,0.65) 50%, rgba(12,12,12,0.98) 100%);
+    }
+    @keyframes heroPan {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.1) translate(-2%, 2%); }
+    }
     .hero-overlay {
 
       position: absolute; inset: 0;
@@ -1162,6 +1176,8 @@
 <!-- ═══════════ HERO -->
 
 <section id="hero">
+  <div class="hero-bg-anim"></div>
+  <div class="hero-bg-overlay"></div>
 
   <canvas id="particles-canvas"></canvas>
 
